@@ -8,4 +8,5 @@ sudo rm -rf /data/web_static/current
 sudo ln -s /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 NEW_STRING="\\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n"
-sudo sed -i "38i $NEW_STRIN
+sudo sed -i "38i $NEW_STRING" /etc/nginx/sites-available/default
+sudo service nginx restart
